@@ -2,7 +2,6 @@
 
 #include <iostream>
 
-int foo () {
+void foo () {
   std::cout<<"Hello World!"<<std::endl;
-  return 0;
 }
