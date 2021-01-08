@@ -14,3 +14,7 @@ target_include_directories(library
     include
   PRIVATE
     include/library)
+
+add_custom_command(TARGET library POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_BINARY_DIR}/compile_commands.json ${CMAKE_SOURCE_DIR})
+
