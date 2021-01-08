@@ -1,20 +1,22 @@
+set(TARGET library)
+
 set(SOURCES
   foo.cpp)
 
-add_library(library STATIC
+add_library(${TARGET} STATIC
   ${SOURCES})
 
-target_compile_options(library
+target_compile_options(${TARGET}
   PRIVATE
     -Wall
     -Werror)
 
-target_include_directories(library
+  target_include_directories(${TARGET}
   INTERFACE
     include
   PRIVATE
-    include/library)
+    include/${TARGET})
 
-add_custom_command(TARGET library POST_BUILD
+  add_custom_command(TARGET ${TARGET} POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_BINARY_DIR}/compile_commands.json ${CMAKE_SOURCE_DIR})
 

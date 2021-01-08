@@ -1,3 +1,4 @@
+import shutil
 import os
 import sys
 import subprocess
@@ -12,6 +13,7 @@ def default():
     subprocess.run("make", cwd=BUILD_DIR, shell=True)
     subprocess.run("program/program", cwd=BUILD_DIR, shell=True)
 
+
 def test():
     if not os.path.exists(BUILD_DIR):
         os.mkdir(BUILD_DIR)
@@ -21,8 +23,12 @@ def test():
     subprocess.run("testrunner/testrunner", cwd=BUILD_DIR, shell=True)
 
 
+def clean():
+    if os.path.isdir(BUILD_DIR):
+        shutil.rmtree(BUILD_DIR)
+
+
 if len(sys.argv) == 1:
     default()
 else:
     locals()[sys.argv[1]](*sys.argv[2:])
-

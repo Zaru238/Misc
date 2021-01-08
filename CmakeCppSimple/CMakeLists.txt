@@ -15,5 +15,5 @@ target_compile_options(${PROJECT_NAME}
     -Wall
     -Werror)
 
-add_custom_command(OUTPUT ${PROJECT_NAME}/compile_commands.json POST_BUILD
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_BINARY_DIR}/compile_commands.json ${CMAKE_SOURCE_DIR})

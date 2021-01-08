@@ -1,14 +1,16 @@
+set(TARGET program)
+
 set(SOURCES_PROG
   main.cpp)
 
-add_executable(program
+add_executable(${TARGET}
   ${SOURCES_PROG})
 
-target_compile_options(program
+target_compile_options(${TARGET}
   PRIVATE
     -Wall
     -Werror)
 
-target_link_libraries(program
+target_link_libraries(${TARGET}
   PRIVATE
     library)
