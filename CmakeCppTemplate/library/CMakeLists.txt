@@ -17,6 +17,6 @@ target_compile_options(${TARGET}
   PRIVATE
     include/${TARGET})
 
-  add_custom_command(TARGET ${TARGET} POST_BUILD
+add_custom_command(TARGET ${TARGET} POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_BINARY_DIR}/compile_commands.json ${CMAKE_SOURCE_DIR})
 
