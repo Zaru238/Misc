@@ -34,6 +34,10 @@ def clean():
 
     print("Done!")
 
+def cleanbuild():
+    clean()
+    default()
+
 if len(sys.argv) == 1:
     default()
 else:

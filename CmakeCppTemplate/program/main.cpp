@@ -1,6 +1,8 @@
-#include "library/foo.h"
+#include <iostream>
 
-int main() {
-  foo();
+#include "library/library.h"
+
+auto main() -> int {
+  std::cout << "Hello world!" << std::endl;
   return 0;
 }

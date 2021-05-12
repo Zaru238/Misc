@@ -1,8 +1,7 @@
 #include <gtest/gtest.h>
 
-#include <library/foo.h>
+#include <library/library.h>
 
 TEST(Foo, DefaultCase) {
-  foo();
   ASSERT_TRUE(true);
 }

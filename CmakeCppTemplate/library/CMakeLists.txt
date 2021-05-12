@@ -1,7 +1,7 @@
 set(TARGET library)
 
 set(SOURCES
-  foo.cpp)
+  library.cpp)
 
 add_library(${TARGET} STATIC
   ${SOURCES})
